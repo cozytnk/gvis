@@ -1,0 +1,92 @@
+
+/* button, input[type="button"], input[type="submit"], input[type="reset"], */
+.button {
+  display: inline-block;
+  /* height: 38px; */
+  height: 28px;
+  /* padding: 0 30px; */
+  padding: 0 10px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  /* line-height: 38px; */
+  line-height: 28px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+label.button > input[type="file"] {
+  display: none;
+}
+
+
+/* input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select */
+.text {
+  /* height: 38px; */
+  height: 28px;
+  /* padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  padding: 1px 5px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+
+details {
+  /* transition: 1s; */
+  border: 1px solid #d1d1d1;
+}
+details[open] {
+
+}
+summary {
+  /* background-color: aqua; */
+  font-weight: bold;
+  /* outline: none; */
+}
+/* summary::-webkit-details-marker {
+  display: none;
+} */
+
+
+/**
+ * vis-network.js css
+ * see https://stackoverflow.com/questions/60880982/vis-network-node-tooltip-note-showing
+ */
+/* ::ng-deep div.vis-tooltip { */ /* NOTE: tooptipは表示されなかった */
+div.vis-tooltip {
+  position: absolute;
+  visibility: hidden;
+  padding: 5px;
+  white-space: nowrap;
+  color: #000000;
+  background-color: #f5f4ed;
+
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #808074;
+
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+
+  z-index: 5;
+}

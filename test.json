@@ -1,0 +1,18 @@
+{
+    "nodes": [
+        { "id": "a", "label": "A", "title": "id:a", "shape": "box", "x": 0, "y": 0, "fixed": true },
+        { "id": "b", "label": "B" },
+        { "id": "c", "label": "C" },
+        { "id": "d", "label": "D" },
+        { "id": "e", "label": "E" },
+        { "id": "f", "label": "F" }
+    ],
+    "edges": [
+        { "id": "a>b", "label": "A->B", "from": "a", "to": "b", "arrows": "to" },
+        { "from": "b", "to": "c" },
+        { "from": "c", "to": "a" },
+        { "from": "b", "to": "d" },
+        { "from": "d", "to": "e" },
+        { "from": "d", "to": "f" }
+    ]
+}

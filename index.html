@@ -14,6 +14,7 @@
   <script src="https://unpkg.com/vis-network@8.5.4/dist/vis-network.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.common.css">
 
 </head>
 
@@ -21,20 +22,28 @@
   <div class="root" id="app">
     <div class="header">
       <div class="logo">GVis</div>
+      <button class="button" @click="clear">clear</button>
     </div>
     <div class="side">
-      <div>side</div>
-      <div>side</div>
-      {{ numOfNodes }} nodes, {{ numOfEdges }} edges.
-      <button @click="debug">debug</button>
-      <input type="file">
-      <label><input type="checkbox" v-model="options.physics.enabled">physics</label> <!-- NOTE: v-model ではsetも行うためoptional chainingはつかえない -->
-      <label><input type="checkbox" v-model="options.layout.hierarchical.enabled">hierarchical</label>
+      <span>{{ numOfNodes }} nodes, {{ numOfEdges }} edges.</span>
+      <button class="button" @click="debug">debug</button>
+      <details open>
+        <summary>File</summary>
+        <file-panel :file-type.sync="file.fileType" :encoding.sync="file.encoding" @open="openFiles" />
+      </details>
+      <details open>
+        <summary>Options</summary>
+        <div>
+          <label><input type="checkbox" v-model="options.physics.enabled">physics</label>
+          <label><input type="checkbox" v-model="options.layout.hierarchical.enabled">hierarchical</label>
+        </div>
+      </details>
     </div>
     <div class="main">
-      <network :data="data" :options="options"></network>
+      <div id="network" class="network"></div>
     </div>
   </div>
+  <script src="utls.js"></script>
   <script src="index.js"></script>
 </body>
 

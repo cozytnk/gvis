@@ -15,7 +15,7 @@ head, body {
   height: 100%;
   max-height: 100%;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 200px 1fr;
   /* grid-template-rows: auto 1fr; */
   grid-template-rows: auto minmax(0, 100%); /* リサイズ時に vis-network の高さが100%を超えてしまうのを防止 */
   grid-template-areas:
@@ -27,6 +27,9 @@ head, body {
   /* background-color: #ddd; */
   border-bottom: 2px solid #ddd;
   padding: 6px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .side {
   grid-area: side;
@@ -35,12 +38,18 @@ head, body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
 }
 .main {
   grid-area: main;
 }
 
+details > div {
+  display: flex;
+  padding: 6px 12px 12px;
+  flex-direction: column;
+  gap: 3px;
+}
 
 .network {
   width: 100%;
